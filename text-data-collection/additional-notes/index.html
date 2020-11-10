@@ -40,16 +40,16 @@
 					</p>
 					<h3>Duplicate Items</h3>
 					<p>
-						The <a href="../collection-process" data-role="internal">collection process</a> used a URL-based item deduplication strategy, i.e. for a given source an item was only added to the collection if no item with the same URL existed in the collection. In some of the sources, especially from the USA, the same item was published with different URLs on different feeds, e.g. on the main feed and the politics feed. 
+						The <a href="../collection-process-ptd" data-role="internal">collection process</a> used a URL-based item deduplication strategy, i.e. for a given source an item was only added to the collection if no item with the same URL existed in the collection. In some of the sources, especially from the USA, the same item was published with different URLs on different feeds, e.g. on the main feed and the politics feed. 
 					</p>
 					<p>
-						Therefore, the collection was scanned for duplicates after the fact to ascertain the number of duplicates for each source in the dataset. Each document was pre-processed and turned into word-vectors as described in section <a href="../../topic-modeling/text-pre-processing" data-role="internal">Text Pre-Processing</a>, with the additional creation of n-grams up to length 3. After that the resulting vectors were transformed into a TF-IDF model using the <a href="http://scikit-learn.org/stable/" target="_new">scikit</a> package. Then each document was compared pairwise with all other documents for a given source using a linear kernel from scikit.
+						Therefore, the collection was scanned for duplicates after the fact to ascertain the number of duplicates for each source in the dataset. Each document was pre-processed and turned into word-vectors as described in section <a href="../../item-selection/eitm-based/topic-modeling/text-pre-processing" data-role="internal">Text Pre-Processing</a>, with the additional creation of n-grams up to length 3. After that the resulting vectors were transformed into a TF-IDF model using the <a href="http://scikit-learn.org/stable/" target="_new">scikit</a> package. Then each document was compared pairwise with all other documents for a given source using a linear kernel from scikit.
 					</p>
 					<p>
 						The threshold for flagging a document as a duplicate of another document was set to 75% similarity. For sources with less than 10,000 documents, the exact duplicate ratio was calculated. For sources with more than 10,000 documents, a random sample from the corpus was drawn. The sample was then split into 5 sub-samples of 2,000 items. For each sub-sample, the number of duplicates was calculated and then averaged over all 5 samples. The code for the duplicate analysis is attached below.
 					</p>
 					<p>
-						The results of this calculation are shown in the table in section <a href="../descriptive-statistics" data-role="internal">Descriptive Statistics</a>. The results show that very few sources have significant numbers of duplicate documents. 
+						The results of this calculation are shown in the table in section <a href="../descriptive-statistics-ptd" data-role="internal">Descriptive Statistics</a>. The results show that very few sources have significant numbers of duplicate documents. 
 					</p>
 					<h3>Language of the Sources</h3>
 					<p>
