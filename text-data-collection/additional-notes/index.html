@@ -43,7 +43,7 @@
 						The <a href="../collection-process-ptd" data-role="internal">collection process</a> used a URL-based item deduplication strategy, i.e. for a given source an item was only added to the collection if no item with the same URL existed in the collection. In some of the sources, especially from the USA, the same item was published with different URLs on different feeds, e.g. on the main feed and the politics feed. 
 					</p>
 					<p>
-						Therefore, the collection was scanned for duplicates after the fact to ascertain the number of duplicates for each source in the dataset. Each document was pre-processed and turned into word-vectors as described in section <a href="../../item-selection/eitm-based/topic-modeling/text-pre-processing" data-role="internal">Text Pre-Processing</a>, with the additional creation of n-grams up to length 3. After that the resulting vectors were transformed into a TF-IDF model using the <a href="http://scikit-learn.org/stable/" target="_new">scikit</a> package. Then each document was compared pairwise with all other documents for a given source using a linear kernel from scikit.
+						Therefore, after the collection was finished, we scanned it duplicates to measure the number of duplicates for each source in the dataset. Each document was pre-processed and turned into word-vectors as described in section <a href="../../item-selection/eitm-based/topic-modeling/text-pre-processing" data-role="internal">Text Pre-Processing</a>, with the additional creation of n-grams up to length 3. After that the resulting vectors were transformed into a TF-IDF model using the <a href="http://scikit-learn.org/stable/" target="_new">scikit</a> package. Then each document was compared pairwise with all other documents for a given source using a linear kernel from scikit.
 					</p>
 					<p>
 						The threshold for flagging a document as a duplicate of another document was set to 75% similarity. For sources with less than 10,000 documents, the exact duplicate ratio was calculated. For sources with more than 10,000 documents, a random sample from the corpus was drawn. The sample was then split into 5 sub-samples of 2,000 items. For each sub-sample, the number of duplicates was calculated and then averaged over all 5 samples. The code for the duplicate analysis is attached below.
@@ -53,7 +53,7 @@
 					</p>
 					<h3>Language of the Sources</h3>
 					<p>
-						The language label of the sources was manually determined before the data collection and later cross-checked using the Python <a href="https://pypi.python.org/pypi/langdetect" target="_new">langdetect</a> package. package. Each article with more than 50 words was analyzed with the langdetect function.
+						The language label of the sources was manually determined before the data collection and later cross-checked using the Python <a href="https://pypi.python.org/pypi/langdetect" target="_new">langdetect</a> package. Each article with more than 50 words was analyzed with the langdetect function.
 					</p>
 					<p>
 						The analysis showed that most of the sources are mainly monolingual. The language label on the source level was based on the majority language in each source. However, two sources turned out to be multilingual, namely <b>reimann-blog.ch</b>, and <b>forausblog.ch</b>. From these sources items written in languages other than the project languages were removed from the data set.

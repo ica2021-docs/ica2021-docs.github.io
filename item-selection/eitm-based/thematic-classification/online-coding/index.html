@@ -36,7 +36,7 @@
 						</div>
 						<div class="col-sm-7 col-md-8 col-lg-9">
 							<p>
-								In the coding process a human coder was presented with a preselected item. This coder assigned a relevance score using a 4-point scale (not relevant, uncertain not relevant, uncertain relevant, relevant) to this item. Items that were rated as thematically irrelevant were discarded. Items that were coded as either “uncertain not relevant” “uncertain relevant”. or relevant were subjected to a second coding decision: Here, another coder could rate the item as thematically irrelevant or relevant. If the coding decision of the second coder was consistent with the decision of the first coder the item was passed on to the pool of relevant items. If the coders disagreed in their coding decision the item was subjected to a third coder who served as a tiebreaker. 
+								In the coding process a human coder was presented with a preselected item. This coder assigned a relevance score using a 4-point scale (not relevant, uncertain not relevant, uncertain relevant, relevant) to this item. Items that were rated as thematically irrelevant were discarded. Items that were coded as either uncertain not relevant, uncertain relevant, or relevant were subjected to a second coding decision: Here, another coder could rate the item as thematically irrelevant or relevant. If the coding decision of the second coder was consistent with the decision of the first coder the item was passed on to the pool of relevant items. If the coders disagreed in their coding decision the item was subjected to a third coder who served as a tiebreaker. 
 							</p>
 							<p>
 								To facilitate this complex online coding process we designed, developed and implemented an online coding tool called the [Blanked] Relevance Coder (BRC).
@@ -54,7 +54,7 @@
 						</div>
 						<div class="col-sm-9">
 							<p>
-								To achieve the goal the collected news items were partitioned into bins of a similar relevance score, from which the items were then randomly drawn and presented to the coders. The bins of items were created for each country and media type. Each bin of items had the same amount of items n<sub>b</sub> across all of its containing sources, i.e. equal-frequency binning was used. The process could also be seen as a clustering of items with a similar relevance score for each source.
+								The collected news items were partitioned into bins of a similar relevance score, from which the items were then randomly drawn and presented to the coders. The bins of items were created for each country and media type. Each bin of items had the same amount of items n<sub>b</sub> across all of its containing sources, i.e. equal-frequency binning was used. The process could also be seen as a clustering of items with a similar relevance score for each source.
 							</p>
 							<p>
 								First, the list of news items collected for each source was sorted based on the assigned relevance score. Then a bin frequency n<sub>b</sub> (in our case 2000) was introduced. After that, the generator has drawn one news item from each source in a round-robin style manner until the bin frequency was equal to or larger than n<sub>b</sub>. If a source did not have any more items, it was skipped for that round and the following rounds. The last round was always completed, which means that the sample could be slightly larger than n<sub>b</sub>.
@@ -70,7 +70,7 @@
 					
 					<h3>First Coding Round</h3>
 					<p>
-						The items were grouped into packages of 20. These work packages were then deployed to a central cloud-based file storage. Each coder was presented with a list of sources and could retrieve the next package for each source from this list. Then they were presented with a coding interface, where they were able to assign codes on a 4-point scale for each item, i.e. not relevant, uncertain not relevant, uncertain relevant or relevant. When all items were coded, the coding results were uploaded to a cloud-based database.
+						The items were grouped into packages of 20. These work packages were then deployed to a central cloud-based file storage. Each coder was presented with a list of sources and could retrieve the next package for each source from this list. Then they were presented with a coding interface, where they were able to assign codes on a 4-point scale for each item, i.e. not relevant, uncertain not relevant, uncertain relevant, or relevant. When all items were coded, the coding results were uploaded to a cloud-based database.
 					</p>
 					<p>
 						To reduce bias introduced by having too much material of one country and media type or for one single source coded by one coder, the interface had several rules in place.
@@ -102,7 +102,7 @@
 					
 					<h3>Second Coding Round</h3>
 					<p>
-						After the package coding, the coders validated each other in a validation step. The coded items of a coder, that were potentially relevant, i.e. uncertain not relevant, uncertain relevant or relevant, were added to a validation pool. All other coders were then presented with that items and asked to code them again on a 2-point scale, as either not relevant or relevant.
+						After the package coding, the coders validated each other in a validation step. The coded items of a coder, that were potentially relevant, i.e. uncertain not relevant, uncertain relevant, or relevant, were added to a validation pool. All other coders were then presented with that items and asked to code them again on a 2-point scale, as either not relevant or relevant.
 					</p>
 					<p>
 						The following three cases are possible after the first validation round. Both coders have
